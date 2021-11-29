@@ -20,10 +20,13 @@ import javax.servlet.http.HttpSession;
 
 import com.javaex.dao.ProductDao;
 import com.javaex.dao.ProductDaoImpl;
+import com.javaex.dao.QuestionDao;
+import com.javaex.dao.QuestionDaoImpl;
 import com.javaex.dao.ReviewDao;
 import com.javaex.dao.ReviewDaoImpl;
 import com.javaex.util.WebUtil;
 import com.javaex.vo.ProductVo;
+import com.javaex.vo.QuestionVo;
 import com.javaex.vo.ReviewVo;
 
 @WebServlet("/product")
@@ -168,8 +171,22 @@ public class ProductServlet extends HttpServlet {
 		}
 
 		//리뷰
- 
+		else if ("reviewList".equals(actionName)) {
+			requestReviewList(request);
+
+			WebUtil.forward(request, response, "/WEB-INF/views/product/productReview.jsp");
+		}
 		
+		//문의 팝업창
+		else if ("inquiryBox".equals(actionName)) {
+			WebUtil.forward(request, response, "/WEB-INF/views/product/productInquirybox.jsp");
+		}
+		
+		//문의 리스트
+		else if ("questionList".equals(actionName)) {
+			requestQnaList(request);
+			WebUtil.forward(request, response, "/WEB-INF/views/product/productReview.jsp");
+		}
 	}
 
 	// 관리자인지 확인하기위해 로그인 되어 있는 정보를 가져온다.
@@ -230,10 +247,10 @@ public class ProductServlet extends HttpServlet {
 
 		
 		int pageNum = 1;
-		int limit = 5;
+		int limit = LISTCOUNT;
 		
-		if(request.getParameter("revpageNum") != null)
-			pageNum = Integer.parseInt(request.getParameter("revpageNum"));
+		if(request.getParameter("pageNum") != null)
+			pageNum = Integer.parseInt(request.getParameter("pageNum"));
 		
 		int proNo =Integer.parseInt(request.getParameter("proNo"));
 		String orderBy = request.getParameter("revOrder");
@@ -258,6 +275,43 @@ public class ProductServlet extends HttpServlet {
 		request.setAttribute("total_page", total_page);
 		request.setAttribute("total_record", total_record);
 		request.setAttribute("revOrder", orderBy);
+		
+		
+	}
+	
+	public void requestQnaList(HttpServletRequest request) {
+		QuestionDao qdao = QuestionDaoImpl.getInstance();
+		List<QuestionVo> questionList = new ArrayList<QuestionVo>();
+
+		
+		int pageNum = 1;
+		int limit = LISTCOUNT;
+		
+		if(request.getParameter("pageNum") != null)
+			pageNum = Integer.parseInt(request.getParameter("pageNum"));
+		
+		int proNo =Integer.parseInt(request.getParameter("proNo"));
+		
+		int total_record = qdao.getListCount(proNo);
+		questionList = qdao.getList(pageNum, limit, proNo);
+		
+		int total_page;
+		
+		if(total_record % limit == 0) {
+			total_page = total_record / limit;
+			Math.floor(total_page);
+		}
+		else {
+			total_page = total_record / limit;
+			Math.floor(total_page);
+			total_page = total_page + 1;
+		}
+
+		request.setAttribute("questionList", questionList);
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("total_page", total_page);
+		request.setAttribute("total_record", total_record);
+		
 		
 		
 	}

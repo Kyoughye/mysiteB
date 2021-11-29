@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <!--
@@ -30,7 +30,7 @@
 			<section id="one">
 				<div class="inner">
 					<header class="major">
-						<h1>��ǰ ���</h1>
+						<h1>상품 등록</h1>
 					</header>
 
 					<hr class="major" />
@@ -39,56 +39,52 @@
 					<div class="row gtr-200">
 						<div class="col-6 col-12-medium">
 
-						
-
 							<form class="form-signin" id="insert-form" name="insertform" method="post" action="/mysiteB/product?a=insertProduct" enctype="multipart/form-data">
 
-
 								<div class="row gtr-uniform">
-								
-								
-									<h3>��ǰ �̸�</h3>
+						
+									<h3>상품 이름</h3>
 									<div class="col-6 col-12-xsmall">
 										<input type="text" name="proName" id="demo-name" value=""/>
 									</div>
 									
 									<div></div>
-									<h3>ī�װ���</h3>
+									<h3>카테고리</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="text" name="proCateg" id="demo-email" value="" />
 									</div>
 									
 									<div></div>
-									<h3>��ǰ ���</h3>
+									<h3>상품 재고</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="text" name="proStock" id="demo-email" value="" />
 									</div>
 									
 									<div></div>
-									<h3>��ǰ ����</h3>
+									<h3>상품 가격</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="text" name="proPrice" id="demo-email" value="" />
 									</div>
 									
 									<div></div>
-									<h3>��ǰ ����</h3>
+									<h3>상품 설명</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="text" name="proDesc" id="demo-email" value="" />
 									</div>
 									
 									<div></div>
-									<h3>�Ǹſ���</h3>
+									<h3>판매여부</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="text" name="proOnSale" id="demo-email" value=""/>
 									</div>
 									
 									<div></div>
-									<h3>��ǰ����</h3>
+									<h3>상품사진</h3>
 									<div class="col-6 col-12-xsmall">
 									
 										<input type="file" name="proFileName" id="demo-email" value=""/>
@@ -96,7 +92,7 @@
 									
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="���"
+											<li><input type="submit" value="등록"
 												class="primary" /></li>
 										</ul>
 									</div>

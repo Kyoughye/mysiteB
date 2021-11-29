@@ -7,6 +7,7 @@ public class QuestionVo {
 	private String qdate;
 	private String qcontent;
 	private int qAvail;
+	private String memId;
 	
 	public QuestionVo() {
 	}
@@ -46,10 +47,18 @@ public class QuestionVo {
 	public void setqAvail(int qAvail) {
 		this.qAvail = qAvail;
 	}
+	
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
 	@Override
 	public String toString() {
 		return "QuestionVo [qno=" + qno + ", prono=" + prono + ", memno=" + memno + ", qdate=" + qdate + ", qcontent="
-				+ qcontent + ", qAvail=" + qAvail + "]";
+				+ qcontent + ", qAvail=" + qAvail + ", memId=" + memId + "]";
 	}
+	
 	
 }

@@ -104,8 +104,6 @@ int total_page = ((Integer) request.getAttribute("total_page")).intValue();
 								</div>
 
 
-
-
 							</div>
 						</div>
 

@@ -11,6 +11,42 @@
 -->
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function() {
+	$('#onDisplay1').click(function() {
+		if($("#noneDiv1").css("display") == "none"){
+			$('#noneDiv1').show();
+			$('#noneDiv2').hide();
+			$('#noneDiv3').hide();
+		}else if ($("onDisplay1").css("display") != "none"){
+			$('#noneDiv1').hide();
+		}
+		
+	});
+	$('#onDisplay2').click(function() {
+		if($("#noneDiv2").css("display") == "none"){
+			$('#noneDiv1').hide();
+			$('#noneDiv2').show();
+			$('#noneDiv3').hide();
+		}else if ($("onDisplay2").css("display") != "none"){
+			$('#noneDiv2').hide();
+		}
+		
+	});
+	$('#onDisplay3').click(function() {
+		if($("#noneDiv3").css("display") == "none"){
+			$('#noneDiv1').hide();
+			$('#noneDiv2').hide();
+			$('#noneDiv3').show();
+		}else if ($("onDisplay3").css("display") != "none"){
+			$('#noneDiv3').hide();
+		}
+		
+	});
+	
+
+});
 <title>Elements - Forty by HTML5 UP</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -170,20 +206,22 @@
 						 -->
 
 
-						<div class="row" style="text-align: center">
-							<!-- Break -->
-							<div class="col-4 col-12-medium">
-								<a href="#" class="list-group-item" style="font-weight: bold">상품상세</a>
-							</div>
-							<div class="col-4 col-12-medium">
-								<a href="#" class="list-group-item" style="font-weight: bold">상품평</a>
-							</div>
-							<div class="col-4 col-12-medium">
-								<a href="#" class="list-group-item" style="font-weight: bold">상품문의</a>
-							</div>
-							
+						 <hr class="major" />
+								
+								<div class="row" style="text-align: center">
+									<!-- Break -->
+									<div class="col-4 col-12-medium">
+										<a class="list-group-item" id = "onDisplay1" style="font-weight: bold">상품상세</a>
+									</div>
+									<div class="col-4 col-12-medium">
+										<a class="list-group-item" id = "onDisplay2" style="font-weight: bold">상품평</a>
+									</div>
+									<div class="col-4 col-12-medium">
+										<a class="list-group-item" id = "onDisplay3" style="font-weight: bold">상품문의</a>
+									</div>
+									
 
-						</div>
+								</div>
 						
 						
 
@@ -204,7 +242,7 @@
 					
 						<div class="col-6 col-12-small">
 							<ul class="actions stacked">
-								<li style="text-align:right"><a href="#" class="button small">문의하기</a></li>
+								<li style="text-align:right"><a href="/WEB-INF/views/product/productInquirybox.jsp" class="button small">문의하기</a></li>
 							</ul>
 						</div>
 
