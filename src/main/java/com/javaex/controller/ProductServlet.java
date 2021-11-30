@@ -166,8 +166,6 @@ public class ProductServlet extends HttpServlet {
 			dao.update(vo);
 			WebUtil.forward(request, response, "/WEB-INF/views/board/read.jsp");
 
-		}else if ("test".equals(actionName)) {
-			WebUtil.forward(request, response, "/WEB-INF/views/product/productInquiry.jsp");
 		}
 
 		//리뷰

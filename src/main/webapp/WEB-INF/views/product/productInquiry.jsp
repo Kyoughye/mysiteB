@@ -71,17 +71,13 @@ $(function() {
 						<h1>카테고리</h1>
 					</header>
 
-
-
 					<hr class="major" />
 
 					<!-- Elements -->
 					<div class="col-6 col-12-medium">
 
-
 						<!-- Lists -->
 						<div class="row">
-
 
 							<div class="col-3 col-3-small">
 
@@ -96,7 +92,6 @@ $(function() {
 							</div>
 
 							<div class="col-9 col-12-medium">
-
 
 								<!-- 
 								
@@ -131,8 +126,6 @@ $(function() {
 								</p>
 								
 								-->
-
-
 
 								<div class="row">
 									<div class="col-6 col-12-small">
@@ -177,10 +170,6 @@ $(function() {
 									</div>
 
 								</div>
-
-
-
-
 
 							</div>
 
@@ -320,13 +309,7 @@ $(function() {
 						</table>
 					</div>
 
-
-
 				</div>
-
-				
-				
-
 
 				<c:import url="/WEB-INF/views/includes/footer.jsp"></c:import>
 
